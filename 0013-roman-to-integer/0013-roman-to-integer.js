@@ -21,15 +21,11 @@ var romanToInt = function(s) {
     let res=0
     for(let i=0;i<s.length;i++){
         let curr=values[s[i]]
-        // console.log(values[s[i+1]])
         if(i!=s.length-1 && curr>values[s[i+1]]){
-            console.log("inside 1st if")
             res+=curr
         }
         else if(i!=s.length-1 && curr<values[s[i+1]]){
-               console.log("inside 2nd if")
             res-=curr
-        
         }
         else{res+=curr}
     }
