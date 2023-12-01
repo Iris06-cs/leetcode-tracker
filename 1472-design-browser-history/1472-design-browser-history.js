@@ -11,11 +11,13 @@ class BrowserHistory{
       
     }
     visit(url){
-        this.history=this.history.splice(0,this.currIdx+1)
+//         this.history=this.history.splice(0,this.currIdx+1)
      
+//         this.history.push(url)
+//         this.currIdx=this.history.length-1
+        this.history.length=this.currIdx+1
         this.history.push(url)
-        this.currIdx=this.history.length-1
-        
+        this.currIdx++
         // console.log(this.history,"debug")
         
     }
