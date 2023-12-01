@@ -1,5 +1,5 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    # def containsDuplicate(self, nums: List[int]) -> bool:
 #         numCount={}
 #         for num in nums:
 #             if not num in numCount.keys():
@@ -18,5 +18,11 @@ class Solution:
 #                 return True
 #             seen.add(num)
 #         return False
-        return len(nums) != len(set(nums))
-        
+        # return len(nums) != len(set(nums))
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen={}
+        for num in nums:
+            if num in seen.keys():
+                return True
+            seen[num]=1
+        return False
