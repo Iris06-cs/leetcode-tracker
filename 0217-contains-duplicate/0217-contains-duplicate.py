@@ -23,7 +23,10 @@ class Solution:
         seen={}
         for num in nums:
             # if num in seen.keys():
-            if seen.get(num) is not None:
+            # if seen.get(num) is not None:
+            try:
+                val=seen[num]
                 return True
-            seen[num]=1
+            except KeyError:
+                seen[num]=1
         return False
