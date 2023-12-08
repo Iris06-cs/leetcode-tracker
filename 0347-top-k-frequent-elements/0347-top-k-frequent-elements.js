@@ -27,7 +27,7 @@
 // };
 
 var topKFrequent = function(nums, k) {
-// optimize to avoid sorting
+
         let count=new Map()
         let res=[]
         for(let num of nums){
@@ -44,18 +44,18 @@ var topKFrequent = function(nums, k) {
             let num_times=count.get(num)
             times.get(num_times).add(num)
         }
-// console.log(times)
-    for(let i=nums.length;i>=0 &&k>0;i--){
-        if(times.get(i).size) {
-            let values=Array.from(times.get(i).values())
-            values.forEach(val=>{
+
+        for(let i=nums.length;i>=0 &&k>0;i--){
+            if(times.get(i).size) {
+                let values=Array.from(times.get(i).values())
+                values.forEach(val=>{
                 res.push(val)
-                    k--
-            })
-        
-        
-        }
+                k--
+                })
+
+
+            }
     }
-    // console.log(res)
+
     return res
 };
