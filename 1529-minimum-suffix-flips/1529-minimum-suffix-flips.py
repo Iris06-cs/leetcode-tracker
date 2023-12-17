@@ -6,6 +6,5 @@ class Solution:
             if flag !=num:
                 flag=num
                 n+=1
-         
         return n
         
