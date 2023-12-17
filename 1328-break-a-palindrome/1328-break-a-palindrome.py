@@ -4,8 +4,7 @@ class Solution:
             return ""
 
         for idx in range(math.floor(len(palindrome)//2)):
-            char=palindrome[idx]
-            if char != "a":             
+            if palindrome[idx] != "a":             
                 return palindrome[:idx]+"a"+palindrome[idx+1:]
 #         all letters are a
         return palindrome[:-1]+"b"
