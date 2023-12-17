@@ -1,5 +1,5 @@
-class Solution:
-    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+# class Solution:
+#     def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
 #         # hash map to track count of each number in array
 #         # remove from the less count number till k = 0
 #         count_tracker={}#O(n)
@@ -19,20 +19,48 @@ class Solution:
 #                 n-=1
                 
 #         return n   #overall time O(n+nlogn) space O(n)
+
+
 #         use python Counter collection
-        count_tracker=Counter(arr)
-        
-#         sort
-        sorted_counts=sorted(count_tracker.values())
-        n=len(sorted_counts)
+#         count_tracker=Counter(arr)   
+# #         sort
+#         sorted_counts=sorted(count_tracker.values())
+#         n=len(sorted_counts)
     
-#         remove elements
-        for count in sorted_counts:
-            if k>=count:
-                k-=count
-                n-=1
-            else:
-                break
-        return n
-            
-            
+# #         remove elements
+#         for count in sorted_counts:
+#             if k>=count:
+#                 k-=count
+#                 n-=1
+#             else:
+#                 break
+#         return n  #nlong space O(n)
+    
+#     better way without sorting
+
+from collections import Counter
+
+class Solution:
+    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+        # Count occurrences of each number
+        count_tracker = Counter(arr)
+
+        # Initialize buckets
+        max_freq = max(count_tracker.values())
+        buckets = [[] for _ in range(max_freq + 1)]
+
+        # Group elements by their frequencies
+        for num, freq in count_tracker.items():
+            buckets[freq].append(num)
+
+        # Remove elements starting from the lowest frequency
+        unique_integers = len(count_tracker)
+        for freq, bucket in enumerate(buckets):
+            for num in bucket:
+                if k >= freq:
+                    k -= freq
+                    unique_integers -= 1
+                else:
+                    return unique_integers
+
+        return unique_integers
