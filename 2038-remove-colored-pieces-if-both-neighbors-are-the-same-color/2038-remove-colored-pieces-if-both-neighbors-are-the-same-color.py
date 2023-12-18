@@ -4,7 +4,6 @@ class Solution:
         for i in range(len(colors)-2):
             if colors[i:i+3]=="AAA":
                 sub_strs["AAA"]+=1
-            
             if colors[i:i+3]=="BBB":
                 sub_strs["BBB"]+=1
   
