@@ -6,19 +6,17 @@ class Solution:
 #     n=1 0-9
 #     n=2 100 0-99
 #.    n=3
+
         if n==0:
             return 1
-        
         res=10
         choices=9
         digit_sum=9
-        
         while n>1 and choices>0:
             digit_sum=digit_sum * choices
             res+=digit_sum
             choices-=1
-            n-=1
-            
+            n-=1    
         return res
         
             
