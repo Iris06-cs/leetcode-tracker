@@ -29,4 +29,4 @@ class Solution:
         # res=tuple(zip(arr,arr[1:]))
         # print(res)
         min_diff=min(j-i for i,j in zip(arr,arr[1:])) 
-        return [[arr[i],arr[i+1]] for i in range(len(arr)-1) if abs(arr[i]-arr[i+1])==min_diff]
+        return [[arr[i],arr[i+1]] for i in range(len(arr)-1) if arr[i+1]-arr[i]==min_diff]
