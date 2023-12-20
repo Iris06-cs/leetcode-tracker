@@ -3,7 +3,7 @@ class Solution:
         # def is_anagrams(str1:List[str],str2:List[str]) -> bool:
         #     if len(str1) != len(str2):
         #         return False
-        #     char_counter=Counter(str1)
+        #     char_counter=Counter(str1)//O(n)
         #     for char in str2:
         #         if char in char_counter.keys():
         #             char_counter[char]-=1
@@ -13,8 +13,23 @@ class Solution:
         #         if count != 0:
         #             return False
         #     return True
-        def is_anagrams(str1: str, str2: str) -> bool:
-            return sorted(str1) == sorted(str2)
+        
+#         with sorting
+        # def is_anagrams(str1: str, str2: str) -> bool: #nlogn
+        #     return sorted(str1) == sorted(str2)
+        
+        def is_anagrams(str1:List[str],str2:List[str]) -> bool:
+            if len(str1) != len(str2):
+                return False
+            counts=[0]*26
+            for i in range(len(str1)):
+                counts[ord(str1[i])-97]+=1
+                counts[ord(str2[i])-97]-=1
+            for count in counts:
+                if count != 0:
+                    return False
+            return True
+            
         
         res=[words[0]]
         for i in range(1,len(words)):
