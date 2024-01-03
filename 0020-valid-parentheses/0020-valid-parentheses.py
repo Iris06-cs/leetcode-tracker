@@ -12,9 +12,7 @@ class Solution:
                     stack.pop()
                 else:
                     return False
-        if len(stack)==0:
-            return True
-        return False
+        return True if not stack else False
         
         
         
