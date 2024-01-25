@@ -3,7 +3,7 @@ class Solution:
         if len(skill) == 2:
             return skill[0] * skill[1]
         sorted_skill=sorted(skill)
-        print(sorted_skill)
+
         i = 0
         j = len(skill)-1
         total=sorted_skill[i]+sorted_skill[j]
