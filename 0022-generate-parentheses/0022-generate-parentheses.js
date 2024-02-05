@@ -12,7 +12,7 @@ var generateParenthesis = function(n) {
     
     const backtracking=(openNum,closeNum)=>{
         if(openNum === closeNum && openNum === n){
-            console.log(stack)
+    
             res.push(stack.join(""))
         }
         if(openNum < n){
