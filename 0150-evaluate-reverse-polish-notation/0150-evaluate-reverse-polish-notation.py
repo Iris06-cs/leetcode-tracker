@@ -13,7 +13,6 @@ class Solution:
                 operand2 = stack.pop()
                 operand1 = stack.pop()
                 operation = operators[token]
-                print()
                 stack.append(operation(operand1, operand2))
   
         return stack.pop()
