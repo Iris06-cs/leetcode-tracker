@@ -13,7 +13,9 @@ class Solution:
         #         nums[j] = prev
         #         prev = curr
         n = len(nums)
-        temp = nums[n-steps:]+nums[:n-steps]
-        # print(temp)
-        for i in range(len(nums)):
-            nums[i] = temp[i]
+        # temp = nums[n-steps:]+nums[:n-steps] #extra space
+        # # print(temp)
+        # for i in range(len(nums)):
+        #     nums[i] = temp[i]
+        
+        nums[:] = nums[n-steps:]+nums[:n-steps]
