@@ -3,13 +3,18 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        start = 0
-        end = len(s) -1
+        # start = 0
+        # end = len(s) -1
+        # while start <= end:
+        #     temp = s[start]
+        #     s[start] = s[end]
+        #     s[end] = temp
+        #     start += 1
+        #     end -= 1
+        
+        start, end = 0, len(s) - 1
         while start <= end:
-            temp = s[start]
-            s[start] = s[end]
-            s[end] = temp
-            start += 1
-            end -= 1
+            s[start], s[end] = s[end], s[start]  # Tuple unpacking for swap
+            start, end = start + 1, end - 1
 
         
